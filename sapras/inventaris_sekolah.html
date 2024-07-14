@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- FAVICONS ICON ========================== -->
 	<link rel="shortcut icon" type="image/x-icon" href="https://ik.imagekit.io/imgFar/man%204%20bone%20web/logo_sekolah.png?updatedAt=1717949236712" />
@@ -47,20 +46,55 @@
             background-color: #FFD700;
         }
         .judul {
+            /* Your styles for .judul class */
         }
         ol {
             margin-left: 50px;
         }
-            @media only screen and (max-width: 600px) {
-            /* Styles for screens less than 600px wide */
-            h3 {
-                font-size: 1.2rem; /* Adjust font size for smaller screens */
-            }
-            table {
-                width: 100%; /* Make tables full width on small screens */
-            }
+        /* Kontainer untuk tabel agar bisa digulir secara horizontal pada layar kecil */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+        /* Media query untuk layar kecil */
+        @media screen and (max-width: 768px) {
+            .table-container table, 
+            .table-container thead, 
+            .table-container tbody, 
+            .table-container th, 
+            .table-container td, 
+            .table-container tr {
+                display: block; /* Mengubah tabel menjadi blok */
             }
 
+            .table-container thead tr {
+                position: absolute; /* Memperbaiki header */
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .table-container tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px; /* Memberi jarak antar baris */
+            }
+
+            .table-container td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%; /* Menyesuaikan padding */
+            }
+
+            .table-container td:before {
+                content: attr(data-label); /* Menampilkan label dari atribut data-label */
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+        }
     </style>
 </head>
 

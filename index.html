@@ -29,6 +29,38 @@
 	<link rel="stylesheet" type="text/css" href="assets/vendors/revolution/css/settings.css">
 	<link rel="stylesheet" type="text/css" href="assets/vendors/revolution/css/navigation.css">
 	<!-- REVOLUTION SLIDER END -->
+
+	<style>
+		swiper-container {
+		width: 100%;
+		height: 660px;
+		}
+
+		swiper-slide {
+		background-position: center;
+		background-size: cover;
+		margin-top: 120px;
+		}
+
+		swiper-slide img {
+		display: block;
+		width: 100%;
+		}
+
+			@media screen and (max-width: 768px){
+				swiper-container {
+			width: 100%;
+			height: 400px;
+			}
+
+			swiper-slide {
+			background-position: center;
+			background-size: cover;
+			margin-top: 95px;
+			}
+		}
+		
+	</style>
 </head>
 <body id="bg">
 <div class="page-wraper">
@@ -168,7 +200,15 @@
     <div class="page-content bg-white">
 
 	<!-- GIF START -->
-	<img src="https://i.ibb.co.com/4FVYgjS/video-hero.gif" alt="video-hero" style="margin-top: 120px; width: 100%;">
+	<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" effect="fade"
+    navigation="true">
+    <swiper-slide>
+      <img src="https://ik.imagekit.io/imgFar/man%204%20bone%20web/video%201.gif?updatedAt=1720968045609" />
+    </swiper-slide>
+    <swiper-slide>
+      <img src="https://ik.imagekit.io/imgFar/man%204%20bone%20web/video%202.gif?updatedAt=1720968046139" />
+    </swiper-slide>
+  </swiper-container>
 	<!-- GIF END -->
 
 
@@ -388,6 +428,8 @@
 <script src="assets/vendors/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 <script src="assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="assets/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
 </html>
 
 
