@@ -182,26 +182,27 @@ Theme Version:	1.0.0
 				/* Magnific Popup ============ */
 				var magnificPopupImageView = function(){
 						
-					/* magnificPopup function */
-					if(checkSelectorExistence('.magnific-image')) {
-						jQuery('.magnific-image').magnificPopup({ 
-							delegate: '.magnific-anchor', 
-							type: 'image',
-							tLoading: 'Loading image #%curr%...',
-							mainClass: 'magnific-img-mobile', 
-							gallery: {
-								enabled: true,
-								navigateByImgClick: true,
-								preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-							},
-							image: {
-								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-								titleSrc: function(item) {
-									return item.el.attr('title') + '<small></small>';
-								}
-							}
-						});
-					}
+/* magnificPopup function */
+if (checkSelectorExistence('.magnific-image')) {
+    jQuery('.magnific-image').magnificPopup({ 
+        delegate: '.magnific-anchor', 
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'magnific-img-mobile', 
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function(item) {
+                return item.el.attr('title') || ''; // Menggunakan atribut title dari elemen <a>
+            }
+        }
+    });
+}
+
 					/* magnificPopup function end */
 					
 					/* magnificPopup for video function */
